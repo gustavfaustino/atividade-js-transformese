@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades de JS</title>
+  </head>
+  <body>
+    <h1>Atividades de JavaScript</h1>
+    <p>
+      Nesta lista de exercícios, iremos praticar os seguintes elementos
+      fundamentais do JavaScript:
+    </p>
+    <ul>
+      <li>Criação e manipulação de <b>variáveis</b></li>
+      <li>
+        Exibição de informações usando <code>console.log()</code> ou
+        <code>document.body.innerHTML</code>
+      </li>
+      <li><b>If simples (<code>if</code>)</b></li>
+      <li>
+        <b>If composto (<code>if / else</code>)</b>
+      </li>
+      <li>
+        <b>If encadeado (<code>if / else if / else</code>)</b>
+      </li>
+      <li><b>Switch / Case</b></li>
+      <li>
+        <b>Operadores de comparação</b> (<code>==, ===, !=, >, <, >=, <=</code>)
+      </li>
+    </ul>
+
+    <hr />
+    <h2>1. If / Else – Verificador de número positivo, negativo ou zero</h2>
+    <p>
+      Crie uma variável contendo um número. Verifique se esse número é
+      <b>positivo</b>, <b>negativo</b> ou <b>igual a zero</b>, e exiba o
+      resultado usando <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Numero: <b id="ex1-numero"></b></p>
+    <p>Ele é: <b id="ex1-resultado"></b></p>
+    <script>
+      var num = document.getElementById("ex1-numero");
+      var res = document.getElementById("ex1-resultado");
+
+      var numero = 5;
+
+      if (numero == 0) {
+        res.innerHTML = "zero!";
+      } else if (numero > 0) {
+        res.innerHTML = "é positivo!";
+      } else if (numero < 5) {
+        res.innerHTML = "é negativo!";
+      } else {
+        res.innerHTML = "Ops! Algo está errado...";
+      }
+
+      num.innerHTML = numero;
+    </script>
+
+    <hr />
+
+    <h2>2. If / Else – Verificar maioridade</h2>
+    <p>Crie uma variável representando a idade de uma pessoa.</p>
+    <p>
+      Informe se ela é <b>maior de idade (18+)</b> ou <b>menor de idade</b>,
+      exibindo o resultado com <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Idade: <b id="ex2-idade"></b></p>
+    <p>Você é: <b id="ex2-faixa_etaria"></b></p>
+
+    <script>
+      var idade = 18;
+
+      document.getElementById("ex2-idade").innerHTML = idade;
+      var res = document.getElementById("ex2-faixa_etaria");
+
+      if (idade >= 18) {
+        res.innerHTML = "maior de idade!";
+      } else if (idade < 18) {
+        res.innerHTML = "menor de idade!";
+      } else {
+        res.innerHTML = "Ops! Algo está errado...";
+      }
+    </script>
+
+    <hr />
+
+    <h2>3. If / Else – Verificar número par ou ímpar</h2>
+    <p>
+      Crie uma variável contendo um número e utilize o operador
+      <code>%</code> para determinar se ele é <b>par</b> ou <b>ímpar</b>,
+      exibindo o resultado com <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Número: <b id="ex3-numero"></b></p>
+    <p>Ele é: <b id="ex3-par_impar"></b></p>
+
+    <script>
+      var numero = 24872846293;
+
+      document.getElementById("ex3-numero").innerHTML = numero;
+      var res = document.getElementById("ex3-par_impar");
+
+      var resto = numero % 2;
+
+      if (resto == 0) {
+        res.innerHTML = "par!";
+      } else if (resto !== 0) {
+        res.innerHTML = "impar!";
+      } else {
+        res.innerHTML = "Ops! Algo está errado...";
+      }
+    </script>
+
+    <hr />
+
+    <h2>4. If / Else If – Comparar dois números</h2>
+    <p>Crie duas variáveis contendo números.</p>
+    <p>
+      Compare os valores usando condicionais e exiba qual deles é maior ou
+      informe que são iguais, utilizando <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Número 1: <b id="ex4-numero1"></b></p>
+    <p>Número 2: <b id="ex4-numero2"></b></p>
+    <p>Resultado: <b id="ex4-comparacao"></b></p>
+
+    <script>
+      var numero1 = 24872846293;
+      var numero2 = 4;
+
+      document.getElementById("ex4-numero1").innerHTML = numero1;
+      document.getElementById("ex4-numero2").innerHTML = numero2;
+      var res = document.getElementById("ex4-comparacao");
+
+      if (numero1 > numero2) {
+        res.innerHTML = "Número 1 é maior";
+      } else if (numero2 > numero1) {
+        res.innerHTML = "Número 2 é maior";
+      } else {
+        res.innerHTML = "Os números são iguais";
+      }
+    </script>
+
+    <hr />
+
+    <h2>5. If Encadeado – Classificação de nota</h2>
+    <p>Crie uma variável contendo uma nota entre <b>0 e 10</b>.</p>
+    <p>Classifique essa nota utilizando <code>if / else if / else</code>:</p>
+    <ul>
+      <li>0 a 4 → "Nota baixa"</li>
+      <li>5 a 7 → "Nota média"</li>
+      <li>8 a 10 → "Nota alta"</li>
+    </ul>
+    <p>
+      Exiba o resultado com <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Nota: <b id="ex5-nota"></b></p>
+    <p>Resultado: <b id="ex5-resultado"></b></p>
+
+    <script>
+      var nota = 3;
+
+      document.getElementById("ex5-nota").innerHTML = nota;
+      var res = document.getElementById("ex5-resultado");
+
+      if (nota >= 8 && nota <= 10) {
+        res.innerHTML = "Nota alta";
+      } else if (nota >= 5 && nota <= 7) {
+        res.innerHTML = "Nota média";
+      } else if (nota >= 0 && nota <= 4) {
+        res.innerHTML = "Nota baixa";
+      } else if (nota < 0) {
+        res.innerHTML = "Nota negativa?";
+      } else {
+        res.innerHTML =
+          "Ops! Há algo errado, insira somente valores entre 0 e 10!";
+      }
+    </script>
+
+    <hr />
+
+    <h2>6. If Encadeado – Calculadora de IMC</h2>
+    <p>
+      Crie duas variáveis: uma para o <b>peso</b> e outra para a <b>altura</b>.
+    </p>
+    <p>Calcule o IMC utilizando a fórmula:</p>
+    <pre><code>IMC = peso / (altura * altura)</code></pre>
+    <p>Classifique o resultado como:</p>
+    <ul>
+      <li>"Abaixo do peso"</li>
+      <li>"Peso normal"</li>
+      <li>"Acima do peso"</li>
+    </ul>
+    <p>
+      Exiba o IMC e sua classificação usando
+      <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Peso: <b id="ex6-peso"></b></p>
+    <p>Altura: <b id="ex6-altura"></b></p>
+    <p>IMC: <b id="ex6-imc"></b></p>
+
+    <script>
+      var peso = 80;
+      var altura = 1.73;
+
+      document.getElementById("ex6-peso").innerHTML = peso;
+      document.getElementById("ex6-altura").innerHTML = altura;
+
+      var res = document.getElementById("ex6-imc");
+
+      var imc = peso / (altura * altura);
+
+      if (imc >= 40.0) {
+        res.innerHTML = "Obesidade severa";
+      } else if (imc <= 39.9 && imc >= 30.0) {
+        res.innerHTML = "Obesidade";
+      } else if (imc <= 29.9 && imc >= 25.0) {
+        res.innerHTML = "Sobrepeso";
+      } else if (imc <= 24.9 && imc >= 18.5) {
+        res.innerHTML = "Normal";
+      } else if (imc < 18.5) {
+        res.innerHTML = "Abaixo do peso";
+      } else {
+        res.innerHTML = "Ops! Há algo errado...";
+      }
+    </script>
+
+    <hr />
+
+    <h2>7. Switch – Calculadora simples</h2>
+    <p>
+      Crie duas variáveis contendo números e outra variável contendo uma
+      operação matemática (<code>+</code>, <code>-</code>, <code>*</code> ou
+      <code>/</code>).
+    </p>
+    <p>
+      Utilize um <b><code>switch</code></b> para executar a operação escolhida e
+      exiba o resultado com <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Número 1: <b id="ex7-numero1"></b></p>
+    <p>Operação: <b id="ex7-operacao"></b></p>
+    <p>Número 2: <b id="ex7-numero2"></b></p>
+    <p>Resultado: <b id="ex7-resultado"></b></p>
+
+    <script>
+      var numero1 = 10;
+      var operacao = "x";
+      var numero2 = 30;
+
+      document.getElementById("ex7-numero1").innerHTML = numero1;
+      document.getElementById("ex7-operacao").innerHTML = operacao;
+      document.getElementById("ex7-numero2").innerHTML = numero2;
+
+      var res = document.getElementById("ex7-resultado");
+
+      switch (operacao) {
+        case "+":
+          res.innerHTML = `${numero1} ${operacao} ${numero2} = ${numero1 + numero2}`;
+          break;
+        case "-":
+          res.innerHTML = `${numero1} ${operacao} ${numero2} = ${numero1 - numero2}`;
+          break;
+        case "x":
+          res.innerHTML = `${numero1} ${operacao} ${numero2} = ${numero1 * numero2}`;
+          break;
+        case "/":
+          res.innerHTML = `${numero1} ${operacao} ${numero2} = ${numero1 / numero2}`;
+          break;
+
+        default:
+          res.innerHTML = "Ops! Há algo errado...";
+          break;
+      }
+    </script>
+
+    <hr />
+
+    <h2>8. Switch – Dia da semana</h2>
+    <p>Crie uma variável contendo um número entre <b>1 e 7</b>.</p>
+    <p>
+      Utilize um <b><code>switch</code></b> para exibir o dia da semana
+      correspondente usando <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+
+    <p>Número da semana: <b id="ex8-numero_semana"></b></p>
+    <p>Hoje é: <b id="ex8-dia_semana"></b></p>
+
+    <script>
+      var numero_semana = 4;
+
+      document.getElementById("ex8-numero_semana").innerHTML = numero_semana;
+
+      var res = document.getElementById("ex8-dia_semana");
+
+      switch (numero_semana) {
+        case 1:
+          res.innerHTML = "Domingo";
+          break;
+        case 2:
+          res.innerHTML = "Segunda-feira";
+          break;
+        case 3:
+          res.innerHTML = "Terça-feira";
+          break;
+        case 4:
+          res.innerHTML = "Quarta-feira";
+          break;
+        case 5:
+          res.innerHTML = "Quinta-feira";
+          break;
+        case 6:
+          res.innerHTML = "Sexta-feira";
+          break;
+        case 7:
+          res.innerHTML = "Sábado";
+          break;
+
+        default:
+          res.innerHTML = "Ops! Há algo errado...";
+          break;
+      }
+    </script>
+
+    <hr />
+
+    <h2>9. If – Verificar múltiplos</h2>
+    <p>Crie duas variáveis contendo números.</p>
+    <p>
+      Utilize o operador <code>%</code> para verificar se o primeiro número é
+      <b>múltiplo</b> do segundo e exiba o resultado usando
+      <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >.
+    </p>
+    <p>Número 1: <b id="ex9-num1"></b></p>
+    <p>Número 2: <b id="ex9-num2"></b></p>
+    <p>Resultado: <b id="ex9-resultado"></b></p>
+
+    <script>
+      var num1 = 20;
+      var num2 = 5;
+
+      document.getElementById("ex9-num1").innerHTML = num1;
+      document.getElementById("ex9-num2").innerHTML = num2;
+
+      var res = document.getElementById("ex9-resultado");
+
+      if (num2 === 0) {
+        res.innerHTML = "Divisão por zero não é permitida";
+      } else if (num1 % num2 === 0) {
+        res.innerHTML = num1 + " é múltiplo de " + num2;
+      } else {
+        res.innerHTML = num1 + " não é múltiplo de " + num2;
+      }
+    </script>
+
+    <hr />
+
+    <h2>10. If / Else – Sistema de login simples</h2>
+    <p>
+      Crie duas variáveis representando um <b>usuário</b> e uma <b>senha</b>.
+    </p>
+    <p>
+      Verifique se os valores correspondem aos dados esperados e exiba uma das
+      mensagens abaixo usando <b><code>console.log()</code></b> ou
+      <b><code>document.body.innerHTML</code></b
+      >:
+    </p>
+    <ul>
+      <li>"Login bem-sucedido!"</li>
+      <li>"Usuário ou senha incorretos."</li>
+    </ul>
+
+    <p>Usuário: <b id="ex10-usuario"></b></p>
+    <p>Senha: <b id="ex10-senha"></b></p>
+
+    <p>Usuário esperado: <b id="ex10-usuario-esperado"></b></p>
+    <p>Senha esperada: <b id="ex10-senha-esperada"></b></p>
+    <p>Resultado: <b id="ex10-resultado"></b></p>
+
+    <script>
+      var usuario = "admin";
+      var senha = "12345";
+
+      var usuarioEsperado = "admin";
+      var senhaEsperada = "1234";
+
+      document.getElementById("ex10-usuario").innerHTML = usuario;
+      document.getElementById("ex10-senha").innerHTML = senha;
+
+      document.getElementById("ex10-usuario-esperado").innerHTML =
+        usuarioEsperado;
+      document.getElementById("ex10-senha-esperada").innerHTML = senhaEsperada;
+
+      var res = document.getElementById("ex10-resultado");
+
+      if (usuario === usuarioEsperado && senha === senhaEsperada) {
+        res.innerHTML = "Login bem-sucedido!";
+      } else {
+        res.innerHTML = "Usuário ou senha incorretos.";
+      }
+    </script>
+
+    <hr />
+  </body>
+</html>
